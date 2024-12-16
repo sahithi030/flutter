@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+
+class TextWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(15.0),
+      child: Text(
+        "Hello A-S-K",
+        textDirection: TextDirection.ltr,
+        style: TextStyle(
+          decoration: TextDecoration.none,
+          color: Colors.red,
+          fontSize: 30.0,
+        ),
+      ),
+    );
+  }
+}
+
+class ImageWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+    Image image =Image.asset('assets/images/logo.png');
+
+    return image;
+  }
+}
+
+class Sandeep extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        child: Column(
+          children: [
+            ImageWidget(), // Display the image widget
+            TextWidget(),  // Display the text widget
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(title: Text("My Flutter App")),
+      body: Sandeep(),
+    ),
+  ));
+}

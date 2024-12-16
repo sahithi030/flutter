@@ -1,0 +1,87 @@
+import 'package:flutter/material.dart';
+
+class Sahithi extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: "Enter your Name",
+              prefixIcon: Icon(Icons.person),
+            ),
+          ),
+          SizedBox(height: 16.0),
+          TextField(
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: "Age",
+              prefixIcon: Icon(Icons.calendar_today),
+            ),
+          ),
+          SizedBox(height: 16.0),
+          TextField(
+            keyboardType: TextInputType.phone,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: "Mobile Number",
+              prefixIcon: Icon(Icons.phone),
+            ),
+          ),
+          SizedBox(height: 16.0),
+          TextField(
+            keyboardType: TextInputType.emailAddress,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: "Email",
+              prefixIcon: Icon(Icons.email),
+            ),
+          ),
+          SizedBox(height: 16.0),
+          TextField(
+            maxLines: 3,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: "Address",
+              prefixIcon: Icon(Icons.home),
+            ),
+          ),
+          SizedBox(height: 24.0),
+          Center(
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.black,
+              ),
+              onPressed: () {},
+              child: Text("Submit"),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(
+    title: 'Form with Input Fields',
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "A-s-k APP",
+          style: TextStyle(fontSize: 30.0),
+        ),
+        backgroundColor: Colors.blue,
+      ),
+      body: Material(
+        child: Sahithi(),
+      ),
+    ),
+  ));
+}

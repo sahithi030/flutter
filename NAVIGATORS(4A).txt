@@ -1,0 +1,72 @@
+MAIN:
+import 'package:flutter/material.dart';
+import 'first.dart'; // Import first.dart
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "ARYA APP",
+      home: SAHIC(), // Call the SAHIC widget
+    );
+  }
+}
+
+FIRST:
+
+import 'package:flutter/material.dart';
+import 'second.dart'; // Import second.dart
+
+class SAHIC extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("SAHIC Page"),
+        backgroundColor: Colors.blueAccent,
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Sahithi()), // Navigate to Sahithi widget
+            );
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.red,
+            foregroundColor: Colors.white,
+          ),
+          child: Text("Go to Sahithi Page"),
+        ),
+      ),
+    );
+  }
+}
+
+SECOND:
+ 
+import 'package:flutter/material.dart';
+
+class Sahithi extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Sahithi Page"),
+        backgroundColor: Colors.green,
+      ),
+      body: Center(
+        child: Text(
+          "Welcome to the Sahithi Page!",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}

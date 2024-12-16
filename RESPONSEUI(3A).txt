@@ -1,0 +1,96 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(Sahithi());
+}
+
+class SmallLayout extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var sahithi = MediaQuery.of(context).orientation;
+
+    return Row(
+      children: [
+        if (MediaQuery.of(context).size.width >= 600)
+          Container(
+            color: Colors.green,
+            width: 100,
+            child: Center(
+              child: Text("Small Layout & Sahithi"),
+            ),
+          ),
+        Expanded(
+          child: Container(
+            color: Colors.red,
+            child: Center(
+              child: Text("Small Layout & Sahithi"),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Container(
+            color: Colors.blue,
+            child: Center(
+              child: Text("Small Layout & Sahithi"),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class LargeLayout extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var sahithi = MediaQuery.of(context).orientation;
+
+    return Row(
+      children: [
+        if (MediaQuery.of(context).size.width >= 600)
+          Container(
+            color: Colors.green,
+            width: 200,
+            child: Center(
+              child: Text("Large Layout & Sahithi"),
+            ),
+          ),
+        Expanded(
+          child: Container(
+            color: Colors.blue,
+            child: Center(
+              child: Text("Large Layout & Sahithi"),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class Sahithi extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    double small = 400.0;
+    double large = 1000.0;
+    double width = MediaQuery.of(context).size.width;
+
+    return MaterialApp(
+      title: "Responsive UI",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("A-SAK APP"),
+        ),
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            if (width <= large) {
+              return SmallLayout();
+            } else {
+              return LargeLayout();
+            }
+          },
+        ),
+      ),
+    );
+  }
+}
